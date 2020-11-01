@@ -1,5 +1,5 @@
 import math
-import scipy.stats
+# import scipy.stats
 class Pearson:
     def __init__(self,users,matrix):
         self.similarityMat = [[0 for _ in range(users)] for _ in range(users)]
@@ -84,9 +84,11 @@ class Pearson:
         # return numerator/denominator
     
     def similarity(self):
+        print("pearson start")
         for i in range(1,self.users):
             for j in range(1,self.users):
                 self.similarityMat[i][j] = self.pearson(self.matrix[i],self.matrix[j])
+                print((i,j))
                 # self.dummy[i][j] = scipy.stats.pearsonr(self.matrix[i],self.matrix[j])[0]
                 
         # print(self.dummy)
